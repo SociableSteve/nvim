@@ -8,17 +8,24 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
 call plug#end()
 
-set splitbelow
-set tabstop=2
-set number relativenumber
-set nu rnu
+set splitbelow            " Make Split command open below instead of above
+set tabstop=2             " Tabs are 2 spaces
+set number relativenumber " Sets lint numbers as relative
+set nu rnu                " Set current lint as absolute
 
+" Show the errors/warnings from COC with Shift+a
 nnoremap <silent><nowait> <space>a :<C-u>CocDiagnostics<cr>
-nnoremap <silent><nowait> <space>g :<C-u>CocFix<cr>
-nnoremap <silent><nowait> <space>f :<C-u>NERDTreeToggle<cr>
-nnoremap <silent><nowait> <space>t :<C-u>split term://bash<CR>
-nnoremap <silent><nowait> <space>p :<C-u>CocCommand prettier.formatFile<cr>
 
+" Suggest fixes for errors/warnings from COC with Shift+g
+nnoremap <silent><nowait> <space>g :<C-u>CocFix<cr>
+
+" Open NERDTree with Shift+f
+nnoremap <silent><nowait> <space>f :<C-u>NERDTreeToggle<cr>
+
+" Open a terminal with Shift+t
+nnoremap <silent><nowait> <space>t :<C-u>split term://bash<cr>
+
+" Make the COC popup less horrible to look at
 highlight CocWarningFloat ctermfg=black
 highlight CocErrorFloat ctermfg=white
 highlight Pmenu ctermbg=red
