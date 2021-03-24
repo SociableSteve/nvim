@@ -5,6 +5,7 @@ Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'romainl/flattened'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+Plug 'joshdick/onedark.vim'
 
 call plug#end()
 
@@ -29,3 +30,8 @@ nnoremap <silent><nowait> <space>t :<C-u>split term://bash<cr>
 highlight CocWarningFloat ctermfg=black
 highlight CocErrorFloat ctermfg=white
 highlight Pmenu ctermbg=red
+
+" Add 'gd' command for go-to-definition	
+nmap <silent> gd <Plug>(coc-definition)
+
+source $HOME/.config/nvim/themes/onedark.vim
