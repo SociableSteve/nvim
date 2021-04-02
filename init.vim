@@ -3,7 +3,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'romainl/flattened'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'joshdick/onedark.vim'
 
@@ -13,6 +12,7 @@ set splitbelow            " Make Split command open below instead of above
 set tabstop=2             " Tabs are 2 spaces
 set number relativenumber " Sets lint numbers as relative
 set nu rnu                " Set current lint as absolute
+let g:NERDTreeWinPos = "right"
 
 " Show the errors/warnings from COC with Shift+a
 nnoremap <silent><nowait> <space>a :<C-u>CocDiagnostics<cr>
